@@ -345,31 +345,6 @@ module positions {
     service_port            = var.service_config.positions.port
 }
 
-module refinitiv_ingestion {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
-    name_prefix             = var.name_prefix
-    standard_tags           = var.standard_tags
-    cluster_name            = module.ecs_cluster.cluster_name
-    capacity_provider_name  = module.ecs_cluster.cluster_capacity_provider
-    wm_instance             = var.wm_instance
-    vpc_id                  = var.vpc_id
-    security_groups         = var.security_groups
-    subnets                 = var.private_subnets
-    logdna_key              = var.logdna_key
-    ecr_account_id          = var.account_id
-    ecr_region              = var.ecr_region
-    aws_lb_arn              = var.aws_lb_arn
-    aws_lb_certificate_arn  = var.aws_lb_certificate_arn
-    domain_name             = var.domain_name
-    environment             = var.environment
-    secrets                 = var.secrets
-    desired_count           = var.desired_count
-    service_name            = var.service_config.refinitiv_ingestion.service_name
-    image_name              = var.service_config.refinitiv_ingestion.image_name
-    image_version           = var.service_config.refinitiv_ingestion.image_version
-    service_port            = var.service_config.refinitiv_ingestion.port
-}
-
 module requests {
     source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
     name_prefix             = var.name_prefix
