@@ -57,9 +57,6 @@ output other_port {
 output positions_port {
     value = var.service_config.positions.port
 }
-output refinitiv_ingestion_port {
-    value = var.service_config.refinitiv_ingestion.port
-}
 output requests_port {
     value = var.service_config.requests.port
 }
