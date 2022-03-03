@@ -13,8 +13,6 @@ module ecs_cluster {
     cluster_sg              = var.cluster_sg
     ecs_subnet              = var.private_subnets
     standard_tags           = var.standard_tags
-    force_delete            = var.force_delete
-    protect_from_scale_in   = var.protect_from_scale_in
 }
 
 # ---------------------------------------------------
