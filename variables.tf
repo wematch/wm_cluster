@@ -24,8 +24,6 @@ variable private_subnets {}
 variable container_insights {}
 variable access_logs_s3_bucket {}
 variable aws_lb_certificate_arn {}
-variable protect_from_scale_in {}
-variable force_delete {}
 
 variable desired_count {
     type    = number
