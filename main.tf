@@ -96,7 +96,7 @@ module client {
 }
 
 module billing {
-    source                  = "github.com/zbs-nu/aws_ecs_service//?ref=1.0.5"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -120,7 +120,7 @@ module billing {
 }
 
 module market_stats_collector {
-    source                  = "github.com/zbs-nu/aws_ecs_service//?ref=1.0.5"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -144,7 +144,7 @@ module market_stats_collector {
 }
 
 module marketdata {
-    source                  = "github.com/zbs-nu/aws_ecs_service//?ref=1.0.5"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -168,7 +168,7 @@ module marketdata {
 }
 
 module match_negotiations {
-    source                  = "github.com/zbs-nu/aws_ecs_service//?ref=1.0.5"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -192,7 +192,7 @@ module match_negotiations {
 }
 
 module matching {
-    source                  = "github.com/zbs-nu/aws_ecs_service//?ref=1.0.5"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -216,7 +216,7 @@ module matching {
 }
 
 module nego {
-    source                  = "github.com/zbs-nu/aws_ecs_service//?ref=1.0.5"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -240,7 +240,7 @@ module nego {
 }
 
 module nego_client {
-    source                  = "github.com/zbs-nu/aws_ecs_service//?ref=1.0.5"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -264,7 +264,7 @@ module nego_client {
 }
 
 module optimizer {
-    source                  = "github.com/zbs-nu/aws_ecs_service//?ref=1.0.5"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -288,7 +288,7 @@ module optimizer {
 }
 
 module other {
-    source                  = "github.com/zbs-nu/aws_ecs_service//?ref=1.0.5"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -312,7 +312,7 @@ module other {
 }
 
 module positions {
-    source                  = "github.com/zbs-nu/aws_ecs_service//?ref=1.0.5"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -336,7 +336,7 @@ module positions {
 }
 
 module refinitiv_ingestion {
-    source                  = "github.com/zbs-nu/aws_ecs_service//?ref=1.0.5"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -360,7 +360,7 @@ module refinitiv_ingestion {
 }
 
 module requests {
-    source                  = "github.com/zbs-nu/aws_ecs_service//?ref=1.0.5"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -384,7 +384,7 @@ module requests {
 }
 
 module sales {
-    source                  = "github.com/zbs-nu/aws_ecs_service//?ref=1.0.5"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -408,7 +408,7 @@ module sales {
 }
 
 module speech {
-    source                  = "github.com/zbs-nu/aws_ecs_service//?ref=1.0.5"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -432,7 +432,7 @@ module speech {
 }
 
 module uploader {
-    source                  = "github.com/zbs-nu/aws_ecs_service//?ref=1.0.5"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
