@@ -16,10 +16,10 @@ module ecs_cluster {
 }
 
 # ---------------------------------------------------
-#    Services
+#    Services - Public
 # ---------------------------------------------------
 module server {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=move-public-services-to-the-same-module-2022-03-06"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -45,7 +45,7 @@ module server {
 }
 
 module admin {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=move-public-services-to-the-same-module-2022-03-06"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -71,7 +71,7 @@ module admin {
 }
 
 module client {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=move-public-services-to-the-same-module-2022-03-06"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -96,8 +96,11 @@ module client {
     public                  = true
 }
 
+# ---------------------------------------------------
+#    Services - Non-Public
+# ---------------------------------------------------
 module billing {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -122,7 +125,7 @@ module billing {
 }
 
 module market_stats_collector {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -147,7 +150,7 @@ module market_stats_collector {
 }
 
 module marketdata {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -172,7 +175,7 @@ module marketdata {
 }
 
 module match_negotiations {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -197,7 +200,7 @@ module match_negotiations {
 }
 
 module matching {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -222,7 +225,7 @@ module matching {
 }
 
 module nego {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -247,7 +250,7 @@ module nego {
 }
 
 module nego_client {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -272,7 +275,7 @@ module nego_client {
 }
 
 module optimizer {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -297,7 +300,7 @@ module optimizer {
 }
 
 module other {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -322,7 +325,7 @@ module other {
 }
 
 module positions {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -347,7 +350,7 @@ module positions {
 }
 
 module requests {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -372,7 +375,7 @@ module requests {
 }
 
 module sales {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -397,7 +400,7 @@ module sales {
 }
 
 module speech {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -422,7 +425,7 @@ module speech {
 }
 
 module uploader {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
