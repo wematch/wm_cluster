@@ -16,10 +16,10 @@ module ecs_cluster {
 }
 
 # ---------------------------------------------------
-#    Services
+#    Services - Public
 # ---------------------------------------------------
 module server {
-    source                  = "github.com/zbs-nu/aws_ecs_service_public//?ref=1.0.0"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -31,20 +31,22 @@ module server {
     logdna_key              = var.logdna_key
     ecr_account_id          = var.account_id
     ecr_region              = var.ecr_region
-    aws_lb_arn              = aws_lb.public.arn ###
+    aws_lb_arn              = aws_lb.public.arn
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
+    secrets                 = var.secrets
     desired_count           = var.desired_count
     service_name            = var.service_config.server.service_name
     image_name              = var.service_config.server.image_name
     image_version           = var.service_config.server.image_version
-    service_internal_port   = var.service_config.server.internal_port
-    service_external_port   = var.service_config.server.external_port
+    service_port            = var.service_config.server.port
+    external_port           = var.service_config.server.external_port
+    public                  = true
 }
 
 module admin {
-    source                  = "github.com/zbs-nu/aws_ecs_service_public//?ref=1.0.0"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -56,20 +58,22 @@ module admin {
     logdna_key              = var.logdna_key
     ecr_account_id          = var.account_id
     ecr_region              = var.ecr_region
-    aws_lb_arn              = aws_lb.public.arn ###
+    aws_lb_arn              = aws_lb.public.arn
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
+    secrets                 = var.secrets
     desired_count           = var.desired_count
     service_name            = var.service_config.admin.service_name
     image_name              = var.service_config.admin.image_name
     image_version           = var.service_config.admin.image_version
-    service_internal_port   = var.service_config.admin.internal_port
-    service_external_port   = var.service_config.admin.external_port
+    service_port            = var.service_config.admin.port
+    external_port           = var.service_config.admin.external_port
+    public                  = true
 }
 
 module client {
-    source                  = "github.com/zbs-nu/aws_ecs_service_public//?ref=1.0.0"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -81,20 +85,25 @@ module client {
     logdna_key              = var.logdna_key
     ecr_account_id          = var.account_id
     ecr_region              = var.ecr_region
-    aws_lb_arn              = aws_lb.public.arn ###
+    aws_lb_arn              = aws_lb.public.arn
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
+    secrets                 = var.secrets
     desired_count           = var.desired_count
     service_name            = var.service_config.client.service_name
     image_name              = var.service_config.client.image_name
     image_version           = var.service_config.client.image_version
-    service_internal_port   = var.service_config.client.internal_port
-    service_external_port   = var.service_config.client.external_port
+    service_port            = var.service_config.client.port
+    external_port           = var.service_config.client.external_port
+    public                  = true
 }
 
+# ---------------------------------------------------
+#    Services - Non-Public
+# ---------------------------------------------------
 module billing {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -119,7 +128,7 @@ module billing {
 }
 
 module market_stats_collector {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -144,7 +153,7 @@ module market_stats_collector {
 }
 
 module marketdata {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -169,7 +178,7 @@ module marketdata {
 }
 
 module match_negotiations {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -194,7 +203,7 @@ module match_negotiations {
 }
 
 module matching {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -219,7 +228,7 @@ module matching {
 }
 
 module nego {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -244,7 +253,7 @@ module nego {
 }
 
 module nego_client {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -269,7 +278,7 @@ module nego_client {
 }
 
 module optimizer {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -294,7 +303,7 @@ module optimizer {
 }
 
 module other {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -319,7 +328,7 @@ module other {
 }
 
 module positions {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -344,7 +353,7 @@ module positions {
 }
 
 module requests {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -369,7 +378,7 @@ module requests {
 }
 
 module sales {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -394,7 +403,7 @@ module sales {
 }
 
 module speech {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -419,7 +428,7 @@ module speech {
 }
 
 module uploader {
-    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.11"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=1.0.13"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
