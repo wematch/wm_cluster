@@ -19,7 +19,7 @@ module ecs_cluster {
 #    Services
 # ---------------------------------------------------
 module server {
-    source                  = "github.com/zbs-nu/aws_ecs_service_public//?ref=1.0.0"
+    source                  = "github.com/zbs-nu/aws_ecs_service_public//?ref=move-public-services-to-the-same-module-2022-03-06"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -31,7 +31,7 @@ module server {
     logdna_key              = var.logdna_key
     ecr_account_id          = var.account_id
     ecr_region              = var.ecr_region
-    aws_lb_arn              = aws_lb.public.arn ###
+    aws_lb_arn              = aws_lb.public.arn
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
@@ -44,7 +44,7 @@ module server {
 }
 
 module admin {
-    source                  = "github.com/zbs-nu/aws_ecs_service_public//?ref=1.0.0"
+    source                  = "github.com/zbs-nu/aws_ecs_service_public//?ref=move-public-services-to-the-same-module-2022-03-06"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -56,7 +56,7 @@ module admin {
     logdna_key              = var.logdna_key
     ecr_account_id          = var.account_id
     ecr_region              = var.ecr_region
-    aws_lb_arn              = aws_lb.public.arn ###
+    aws_lb_arn              = aws_lb.public.arn
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
@@ -69,7 +69,7 @@ module admin {
 }
 
 module client {
-    source                  = "github.com/zbs-nu/aws_ecs_service_public//?ref=1.0.0"
+    source                  = "github.com/zbs-nu/aws_ecs_service_public//?ref=move-public-services-to-the-same-module-2022-03-06"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -81,7 +81,7 @@ module client {
     logdna_key              = var.logdna_key
     ecr_account_id          = var.account_id
     ecr_region              = var.ecr_region
-    aws_lb_arn              = aws_lb.public.arn ###
+    aws_lb_arn              = aws_lb.public.arn
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
@@ -89,8 +89,8 @@ module client {
     service_name            = var.service_config.client.service_name
     image_name              = var.service_config.client.image_name
     image_version           = var.service_config.client.image_version
-    service_internal_port   = var.service_config.client.internal_port
-    service_external_port   = var.service_config.client.external_port
+    service_port            = var.service_config.client.service_port
+    external_port           = var.service_config.client.external_port
 }
 
 module billing {
