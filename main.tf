@@ -19,7 +19,7 @@ module ecs_cluster {
 #    Services
 # ---------------------------------------------------
 module server {
-    source                  = "github.com/zbs-nu/aws_ecs_service_public//?ref=move-public-services-to-the-same-module-2022-03-06"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=move-public-services-to-the-same-module-2022-03-06"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -44,7 +44,7 @@ module server {
 }
 
 module admin {
-    source                  = "github.com/zbs-nu/aws_ecs_service_public//?ref=move-public-services-to-the-same-module-2022-03-06"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=move-public-services-to-the-same-module-2022-03-06"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
@@ -69,7 +69,7 @@ module admin {
 }
 
 module client {
-    source                  = "github.com/zbs-nu/aws_ecs_service_public//?ref=move-public-services-to-the-same-module-2022-03-06"
+    source                  = "github.com/wematch/wm_aws_ecs_service//?ref=move-public-services-to-the-same-module-2022-03-06"
     name_prefix             = var.name_prefix
     standard_tags           = var.standard_tags
     cluster_name            = module.ecs_cluster.cluster_name
