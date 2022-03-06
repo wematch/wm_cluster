@@ -39,7 +39,7 @@ module server {
     service_name            = var.service_config.server.service_name
     image_name              = var.service_config.server.image_name
     image_version           = var.service_config.server.image_version
-    service_port            = var.service_config.server.service_port
+    service_port            = var.service_config.server.port
     external_port           = var.service_config.server.external_port
 }
 
@@ -64,7 +64,7 @@ module admin {
     service_name            = var.service_config.admin.service_name
     image_name              = var.service_config.admin.image_name
     image_version           = var.service_config.admin.image_version
-    service_port            = var.service_config.admin.service_port
+    service_port            = var.service_config.admin.port
     external_port           = var.service_config.admin.external_port
 }
 
@@ -89,7 +89,7 @@ module client {
     service_name            = var.service_config.client.service_name
     image_name              = var.service_config.client.image_name
     image_version           = var.service_config.client.image_version
-    service_port            = var.service_config.client.service_port
+    service_port            = var.service_config.client.port
     external_port           = var.service_config.client.external_port
 }
 
