@@ -41,6 +41,7 @@ module server {
     image_version           = var.service_config.server.image_version
     service_port            = var.service_config.server.port
     external_port           = var.service_config.server.external_port
+    public                  = true
 }
 
 module admin {
@@ -66,6 +67,7 @@ module admin {
     image_version           = var.service_config.admin.image_version
     service_port            = var.service_config.admin.port
     external_port           = var.service_config.admin.external_port
+    public                  = true
 }
 
 module client {
@@ -91,6 +93,7 @@ module client {
     image_version           = var.service_config.client.image_version
     service_port            = var.service_config.client.port
     external_port           = var.service_config.client.external_port
+    public                  = true
 }
 
 module billing {
