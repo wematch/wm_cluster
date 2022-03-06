@@ -35,6 +35,7 @@ module server {
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
+    secrets                 = var.secrets
     desired_count           = var.desired_count
     service_name            = var.service_config.server.service_name
     image_name              = var.service_config.server.image_name
@@ -61,6 +62,7 @@ module admin {
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
+    secrets                 = var.secrets
     desired_count           = var.desired_count
     service_name            = var.service_config.admin.service_name
     image_name              = var.service_config.admin.image_name
@@ -87,6 +89,7 @@ module client {
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
+    secrets                 = var.secrets
     desired_count           = var.desired_count
     service_name            = var.service_config.client.service_name
     image_name              = var.service_config.client.image_name
