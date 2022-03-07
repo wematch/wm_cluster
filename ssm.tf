@@ -6,7 +6,7 @@ resource aws_ssm_parameter fb_url {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -18,7 +18,7 @@ resource aws_ssm_parameter fb_client_mail {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -30,7 +30,7 @@ resource aws_ssm_parameter fb_private_key {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -42,7 +42,7 @@ resource aws_ssm_parameter fb_project_id {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -54,7 +54,7 @@ resource aws_ssm_parameter mail_bcc_array {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -66,7 +66,7 @@ resource aws_ssm_parameter mail_for_server_status {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -78,7 +78,7 @@ resource aws_ssm_parameter kyte_isin_email {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -90,7 +90,7 @@ resource aws_ssm_parameter get_url_token {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -102,7 +102,7 @@ resource aws_ssm_parameter logdna {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -114,7 +114,7 @@ resource aws_ssm_parameter cookie_secret {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -126,7 +126,7 @@ resource aws_ssm_parameter google_client_id {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -138,7 +138,7 @@ resource aws_ssm_parameter google_project_id {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -150,7 +150,7 @@ resource aws_ssm_parameter google_client_secret {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -162,7 +162,7 @@ resource aws_ssm_parameter google_redirect_uris {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -174,7 +174,7 @@ resource aws_ssm_parameter google_access_token {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -186,7 +186,7 @@ resource aws_ssm_parameter google_refresh_token {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -198,7 +198,7 @@ resource aws_ssm_parameter symphony_base_url {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -210,7 +210,7 @@ resource aws_ssm_parameter symphony_pod_host {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -222,7 +222,7 @@ resource aws_ssm_parameter symphony_bot_username {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -234,7 +234,7 @@ resource aws_ssm_parameter symphony_private_key {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -246,7 +246,7 @@ resource aws_ssm_parameter opendata_service_url {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -258,7 +258,7 @@ resource aws_ssm_parameter opendata_service_key {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -270,7 +270,7 @@ resource aws_ssm_parameter server_opendata_key {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -282,7 +282,7 @@ resource aws_ssm_parameter types {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -294,7 +294,7 @@ resource aws_ssm_parameter mongo_atlas_url {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -306,7 +306,7 @@ resource aws_ssm_parameter mongo_url {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -318,7 +318,7 @@ resource aws_ssm_parameter mongo_url_read {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
@@ -333,7 +333,7 @@ resource aws_ssm_parameter logdna_key {
     type        = "SecureString"
     value       = "initial_value"
     overwrite   = false
-    tags        = local.standard_tags
+    tags        = var.standard_tags
 
     lifecycle {
         ignore_changes = [value]
