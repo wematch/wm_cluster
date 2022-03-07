@@ -35,7 +35,7 @@ module server {
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
-    secrets                 = var.secrets
+    secrets                 = setunion(var.secrets, local.secrets)
     desired_count           = var.desired_count
     service_name            = var.service_config.server.service_name
     image_name              = var.service_config.server.image_name
@@ -62,7 +62,7 @@ module admin {
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
-    secrets                 = var.secrets
+    secrets                 = setunion(var.secrets, local.secrets)
     desired_count           = var.desired_count
     service_name            = var.service_config.admin.service_name
     image_name              = var.service_config.admin.image_name
@@ -89,7 +89,7 @@ module client {
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
-    secrets                 = var.secrets
+    secrets                 = setunion(var.secrets, local.secrets)
     desired_count           = var.desired_count
     service_name            = var.service_config.client.service_name
     image_name              = var.service_config.client.image_name
@@ -119,7 +119,7 @@ module billing {
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
-    secrets                 = var.secrets
+    secrets                 = setunion(var.secrets, local.secrets)
     desired_count           = var.desired_count
     service_name            = var.service_config.billing.service_name
     image_name              = var.service_config.billing.image_name
@@ -144,7 +144,7 @@ module market_stats_collector {
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
-    secrets                 = var.secrets
+    secrets                 = setunion(var.secrets, local.secrets)
     desired_count           = var.desired_count
     service_name            = var.service_config.market_stats_collector.service_name
     image_name              = var.service_config.market_stats_collector.image_name
@@ -169,7 +169,7 @@ module marketdata {
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
-    secrets                 = var.secrets
+    secrets                 = setunion(var.secrets, local.secrets)
     desired_count           = var.desired_count
     service_name            = var.service_config.marketdata.service_name
     image_name              = var.service_config.marketdata.image_name
@@ -194,7 +194,7 @@ module match_negotiations {
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
-    secrets                 = var.secrets
+    secrets                 = setunion(var.secrets, local.secrets)
     desired_count           = var.desired_count
     service_name            = var.service_config.match_negotiations.service_name
     image_name              = var.service_config.match_negotiations.image_name
@@ -219,7 +219,7 @@ module matching {
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
-    secrets                 = var.secrets
+    secrets                 = setunion(var.secrets, local.secrets)
     desired_count           = var.desired_count
     service_name            = var.service_config.matching.service_name
     image_name              = var.service_config.matching.image_name
@@ -244,7 +244,7 @@ module nego {
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
-    secrets                 = var.secrets
+    secrets                 = setunion(var.secrets, local.secrets)
     desired_count           = var.desired_count
     service_name            = var.service_config.nego.service_name
     image_name              = var.service_config.nego.image_name
@@ -269,7 +269,7 @@ module nego_client {
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
-    secrets                 = var.secrets
+    secrets                 = setunion(var.secrets, local.secrets)
     desired_count           = var.desired_count
     service_name            = var.service_config.nego_client.service_name
     image_name              = var.service_config.nego_client.image_name
@@ -294,7 +294,7 @@ module optimizer {
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
-    secrets                 = var.secrets
+    secrets                 = setunion(var.secrets, local.secrets)
     desired_count           = var.desired_count
     service_name            = var.service_config.optimizer.service_name
     image_name              = var.service_config.optimizer.image_name
@@ -319,7 +319,7 @@ module other {
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
-    secrets                 = var.secrets
+    secrets                 = setunion(var.secrets, local.secrets)
     desired_count           = var.desired_count
     service_name            = var.service_config.other.service_name
     image_name              = var.service_config.other.image_name
@@ -344,7 +344,7 @@ module positions {
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
-    secrets                 = var.secrets
+    secrets                 = setunion(var.secrets, local.secrets)
     desired_count           = var.desired_count
     service_name            = var.service_config.positions.service_name
     image_name              = var.service_config.positions.image_name
@@ -369,7 +369,7 @@ module requests {
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
-    secrets                 = var.secrets
+    secrets                 = setunion(var.secrets, local.secrets)
     desired_count           = var.desired_count
     service_name            = var.service_config.requests.service_name
     image_name              = var.service_config.requests.image_name
@@ -393,7 +393,7 @@ module sales {
     aws_lb_arn              = var.aws_lb_arn
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
-    secrets                 = var.secrets
+    secrets                 = setunion(var.secrets, local.secrets)
     environment             = var.environment
     desired_count           = var.desired_count
     service_name            = var.service_config.sales.service_name
@@ -419,7 +419,7 @@ module speech {
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
-    secrets                 = var.secrets
+    secrets                 = setunion(var.secrets, local.secrets)
     desired_count           = var.desired_count
     service_name            = var.service_config.speech.service_name
     image_name              = var.service_config.speech.image_name
@@ -444,11 +444,10 @@ module uploader {
     aws_lb_certificate_arn  = var.aws_lb_certificate_arn
     domain_name             = var.domain_name
     environment             = var.environment
-    secrets                 = var.secrets
+    secrets                 = setunion(var.secrets, local.secrets)
     desired_count           = var.desired_count
     service_name            = var.service_config.uploader.service_name
     image_name              = var.service_config.uploader.image_name
     image_version           = var.service_config.uploader.image_version
     service_port            = var.service_config.uploader.port
 }
-# ---------------------------------------------------
