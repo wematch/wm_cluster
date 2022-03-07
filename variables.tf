@@ -1,6 +1,5 @@
 variable vpc_id {}
 variable zone_id {}
-variable secrets {}
 variable key_name {}
 variable ebs_disks {}
 variable account_id {}
@@ -28,4 +27,13 @@ variable aws_lb_certificate_arn {}
 variable desired_count {
     type    = number
     default = 1
+}
+
+variable secrets {
+    type = list(object({
+        name  = any
+        value = any
+    }))
+    description = "List of Secrets"
+    default     = []
 }
